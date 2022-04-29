@@ -18,10 +18,11 @@ ___
 - Select model in torchvision.models(using DenseNet in this code) and chage __input size(in_features)__ to fit the model.
     ```
     model.classifier = nn.Linear(in_features=1024, out_features=4)
+    
 ## How to predict
 - set wav file in './predict_audio'.  
   you must set only one file in this dir or fix the code.
-   ```
+- ```
     python predict_torch.py
 ## Reference
 - benchmark link : https://github.com/MITESHPUTHRANNEU/Speech-Emotion-Analyzer
