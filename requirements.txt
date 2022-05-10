@@ -3,7 +3,6 @@ torchvision == 0.10.0
 numpy
 librosa
 tqdm
-tensorflow == 2.8.0
 pyaudio  #If pip occurs error, install by conda
 wave
 matplotlib
