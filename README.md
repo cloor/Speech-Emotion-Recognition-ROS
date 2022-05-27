@@ -3,7 +3,9 @@ This repo illustrates how to use Speech-emotion-recognition module with ROS.
 
 We only use voice with korean, not text.
 
-We need Ros, audio_common and pytorch.
+We need Ros, [audio_common](https://github.com/ros-drivers/audio_common) and pytorch. 
+
+In audio_common_msgs, we must add Audio_result.msg and command.msg
 
 requirements must be installed. And Ros settings also required. I use ros-kinnetic.
 ___
@@ -67,8 +69,13 @@ ___
     2. Result confusion matrix for custom data (accuracy = 40%)
     
     ![result_matrix_img_sw_aihub_pretrained](https://user-images.githubusercontent.com/88182732/167777834-a76d55bb-1874-4e83-bddd-a9c2e888dc53.png)
+    
+    3. Finally we use data augmentation. Result confusion matrix(AIhub + Custom Data W augmentation)(accuracy = 83%)
+    
+    ![result_matrix_img_aihub+custom+augmentaion](https://user-images.githubusercontent.com/88182732/170638258-96656f58-d0f6-4321-b475-4224a828d6e2.png)
 
-___
+  
+___ 
 # How to use 
 - ## How to trained __(pytorch)__
   - First, clone this repo.
@@ -88,5 +95,20 @@ ___
     you must set only one file in this dir or fix the code.
     ```
     python predict_torch_img.py
+
+- ## How to use in ROS
+
+  1. set audio_capture.launch or roscore to set ros node.
+  2. ```
+      rosrun speech-emotion-ros predict.py
+     ```    
+  3. ```
+      rosrun speech-emotion-ros command.py
+     ```
+  4. 'start' button to start recording, 'end' button to end recording and predict.
+
+
 ## Reference
-- benchmark link : https://github.com/MITESHPUTHRANNEU/Speech-Emotion-Analyzer
+- benchmark link : 
+  1. https://github.com/MITESHPUTHRANNEU/Speech-Emotion-Analyzer
+  2. https://github.com/Data-Science-kosta/Speech-Emotion-Classification-with-PyTorch  
