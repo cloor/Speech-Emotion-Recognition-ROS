@@ -104,7 +104,7 @@ ___
 
 - ## How to use in ROS
 
-  1. Run audio_capture.launch or roscore to set ros node.
+  1. Run audio_capture.launch 
   2. ```
       rosrun speech-emotion-ros predict.py
      ```    
